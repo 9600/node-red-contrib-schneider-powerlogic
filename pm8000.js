@@ -418,187 +418,330 @@ module.exports = function(RED) {
                 res.unit = "%";
               break;
               case 31:
-                case "frequency":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3109,
-                      quantity: 2,
-                      };
-                  res.topic = "frequency";
-                  res.format = "float32";
-                  res.model = "pm8000";
-                  res.unit = "Hz";
-                break;
-                case 32:
-                case "toEnergyActImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3203,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh";
-                break;
-                case 33:
-                case "toEnergyActExp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3207,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActExp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh";
-                break;
-                case 34:
-                case "toEnergyReactImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3219,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyReactImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VARh";
-                break;
-                case 35:
-                case "toEnergyReactExp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3223,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyReactExp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VARh";
-                break;
-                case 36:
-                case "toEnergyAppImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3235,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyAppImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VAh";
-                break;
-                case 37:
-                case "toEnergyAppExp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3239,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyAppExp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VAh";
-                break;
-                case 38:
-                case "paEnergyActImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3255,
-                      quantity: 4,
-                      };
-                  res.topic = "paEnergyActImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh";
-                break;
-                case 39:
-                case "paEnergyReactImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3271,
-                      quantity: 4,
-                      };
-                  res.topic = "paEnergyReactImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VARh";
-                break;
-                case 40:
-                case "paEnergyAppImp":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 3287,
-                      quantity: 4,
-                      };
-                  res.topic = "paEnergyAppImp";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "VAh"
-                break;
-                case 41:
-                case "toEnergyActImpRate1":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 4195,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActImpRate1";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh"
-                break;
-                case 42:
-                case "toEnergyActImpRate2":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 4199,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActImpRate2";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh"
-                break;
-                case 43:
-                case "toEnergyActImpRate3":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 4203,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActImpRate3";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh"
-                break;
-                case 45:
-                case "toEnergyActImpRate4":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 4207,
-                      quantity: 4,
-                      };
-                  res.topic = "toEnergyActImpRate4";
-                  res.format = "int64";
-                  res.model = "pm8000";
-                  res.unit = "Wh"
-                break;  
+              case "frequency":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3109,
+                    quantity: 2,
+                    };
+                res.topic = "frequency";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
+              case 32:
+              case "toEnergyActImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3203,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh";
+              break;
+              case 33:
+              case "toEnergyActExp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3207,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActExp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh";
+              break;
+              case 34:
+              case "toEnergyReactImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3219,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyReactImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VARh";
+              break;
+              case 35:
+              case "toEnergyReactExp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3223,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyReactExp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VARh";
+              break;
+              case 36:
+              case "toEnergyAppImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3235,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyAppImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VAh";
+              break;
+              case 37:
+              case "toEnergyAppExp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3239,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyAppExp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VAh";
+              break;
+              case 38:
+              case "paEnergyActImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3255,
+                    quantity: 4,
+                    };
+                res.topic = "paEnergyActImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh";
+              break;
+              case 39:
+              case "paEnergyReactImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3271,
+                    quantity: 4,
+                    };
+                res.topic = "paEnergyReactImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VARh";
+              break;
+              case 40:
+              case "paEnergyAppImp":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 3287,
+                    quantity: 4,
+                    };
+                res.topic = "paEnergyAppImp";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "VAh"
+              break;
+              case 41:
+              case "toEnergyActImpRate1":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 4195,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActImpRate1";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh"
+              break;
+              case 42:
+              case "toEnergyActImpRate2":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 4199,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActImpRate2";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh"
+              break;
+              case 43:
+              case "toEnergyActImpRate3":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 4203,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActImpRate3";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh"
+              break;
+              case 44:
+              case "toEnergyActImpRate4":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 4207,
+                    quantity: 4,
+                    };
+                res.topic = "toEnergyActImpRate4";
+                res.format = "int64";
+                res.model = "pm8000";
+                res.unit = "Wh"
+              break;  
+              case 45:
+              case "THD-Voltage-L1N":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39400,
+                    quantity: 2,
+                    };
+                res.topic = "THD-Voltage-L1N";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "%"
+              break; 
+              case 46:
+              case "THD-Voltage-L2N":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39402,
+                    quantity: 2,
+                    };
+                res.topic = "THD-Voltage-L2N";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "%"
+              break; 
+              case 47:
+              case "THD-Voltage-L3N":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39404,
+                    quantity: 2,
+                    };
+                res.topic = "THD-Voltage-L3N";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "%"
+              break; 
+              case 48:
+              case "Voltage-PosSeqMag2h":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39440,
+                    quantity: 2,
+                    };
+                res.topic = "Voltage-PosSeqMag2h";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "V"
+              break; 
+              case 49:
+              case "Voltage-NegSeqMag2h":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39444,
+                    quantity: 2,
+                    };
+                res.topic = "Voltage-NegSeqMag2h";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "V"
+              break; 
+              case 50:
+              case "Voltage-ZeroSeqMag2h":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39448,
+                    quantity: 2,
+                    };
+                res.topic = "Voltage-ZeroSeqMag2h";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "V"
+              break; 
+              case 51:
+              case "freq10mMean":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 39999,
+                    quantity: 2,
+                    };
+                res.topic = "freq10mMean";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
+              case 52:
+              case "freq10mLow":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 40001,
+                    quantity: 2,
+                    };
+                res.topic = "freq10mLow";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
+              case 53:
+              case "freq10mHigh":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 40003,
+                    quantity: 2,
+                    };
+                res.topic = "freq10mHigh";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
+              case 54:
+              case "freqMin":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 40005,
+                    quantity: 2,
+                    };
+                res.topic = "freqMin";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
+              case 55:
+              case "freqMax":
+                res.payload = {
+                    fc: 3,
+                    unitid: settings.unitId,
+                    address: 40007,
+                    quantity: 2,
+                    };
+                res.topic = "freqMax";
+                res.format = "float32";
+                res.model = "pm8000";
+                res.unit = "Hz";
+              break;
             }
             
             node.send(res);
